@@ -5,9 +5,10 @@ const createTuit = (req, res) => {
     const newTuit = req.body;
     newTuit._id = (new Date()).getTime() + '';
     newTuit.time = "now";
-    newTuit.image = "https://i1.sndcdn.com/avatars-JUvAAPvAA86fmbVE-SH0i6g-t500x500.jpg";
+    newTuit.image = "https://user-images.githubusercontent.com/48724314/201955458-6a2082c9-6727-45ed-adf6-065c8fae83be.jpeg";
     newTuit.username = "NASA";
     newTuit.handle = "@nasa";
+    newTuit.replies = 0;
     newTuit.retuits = 0;
     newTuit.disliked = false;
     newTuit.dislikes = 0;
