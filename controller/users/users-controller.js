@@ -4,7 +4,7 @@ let users = people
 const UserController = (app) => {
     app.get('/api/users', findUsers);
     app.get('/api/users/:uid', findUserById);
-    app.post('/api/users', createUser);
+    app.post('/api/users', createUser); // map URL patterns to handler function
     app.delete('/api/users/:uid', deleteUser);
     app.put('/api/users/:uid', updateUser);
 }
@@ -28,10 +28,10 @@ const deleteUser = (req, res) => {
 }
 
 const createUser = (req, res) => {
-    const newUser = req.body;
-    newUser._id = (new Date()).getTime() + '';
-    users.push(newUser);
-    res.json(newUser);
+    const newUser = req.body; // extract new user from BODY in request
+    newUser._id = (new Date()).getTime() + ''; // add an _id property with unique timestamp
+    users.push(newUser); // append new user to users array
+    res.json(newUser); // respond with new user to client
 }
 
 const findUserById = (req, res) => {
