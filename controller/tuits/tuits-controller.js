@@ -32,7 +32,7 @@ const updateTuit = (req, res) => {
         (t) => t._id === tuitdIdToUpdate)
     tuits[tuitIndex] =
         {...tuits[tuitIndex], ...updates};
-    res.sendStatus(200);//return OK
+    res.json(tuits[tuitIndex]);//return OK
 }
 
 const deleteTuit = (req, res) => {
