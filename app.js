@@ -3,13 +3,13 @@ import cors from "cors";
 import HelloController from "./controller/hello-controller.js";
 import UserController from "./controller/users/users-controller.js";
 import TuitsController from "./controller/tuits/tuits-controller.js";
-import mongoose from "mongoose";
+//import mongoose from "mongoose";
 
 //mongodb+srv://root:<password>@cluster0.kjs6rxr.mongodb.net/?retryWrites=true&w=majority
 
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
-    || 'mongodb://localhost:27017/tuiter'
-mongoose.connect(CONNECTION_STRING);
+// const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
+//     || 'mongodb://localhost:27017/tuiter'
+// mongoose.connect(CONNECTION_STRING);
 const app = express();
 app.use(cors());
 app.use(express.json()); // parse JSON from HTTP request body
