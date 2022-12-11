@@ -22,10 +22,16 @@ const findTuits  = async (req, res) => {
 }
 
 const updateTuit = async (req, res) => {
+//    try{
     const tuitdIdToUpdate = req.params.tid;
     const updates = req.body;
     const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updates);
     res.json(status);
+//    }
+//    catch(e){
+//    res.json({'error_message':e});
+//    console.log('Invalid Id');
+//    }
 }
 
 const deleteTuit = async (req, res) => {
